@@ -11,8 +11,9 @@ export default function SuccessScreen({ navigation }) {
       </TouchableOpacity>
 
       <View style={styles.content}>
+        {/* Đã thay đổi đường dẫn ảnh thành local */}
         <Image 
-          source={{ uri: 'https://cdn-icons-png.flaticon.com/512/9133/9133069.png' }} 
+          source={require('../../assets/pc8.jpg')} 
           style={styles.image} 
         />
         

@@ -6,7 +6,11 @@ import { Ionicons } from '@expo/vector-icons';
 export default function ScanScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image source={{ uri: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80' }} style={styles.cameraBackground} />
+      {/* 1. Thay đổi ảnh nền camera thành ảnh local pc9.jpg */}
+      <Image 
+        source={require('../../assets/pc9.jpg')} 
+        style={styles.cameraBackground} 
+      />
       
       <SafeAreaView style={styles.overlay}>
         <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
@@ -22,7 +26,11 @@ export default function ScanScreen({ navigation }) {
         </View>
 
         <View style={styles.bottomCard}>
-          <Image source={{ uri: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=100&q=80' }} style={styles.thumb} />
+          {/* 2. Thay đổi ảnh thumbnail ở thanh bên dưới thành pc9.jpg */}
+          <Image 
+            source={require('../../assets/pc9.jpg')} 
+            style={styles.thumb} 
+          />
           <View style={{ flex: 1, marginLeft: 15 }}>
             <Text style={{ fontSize: 12, color: '#888' }}>Lauren's</Text>
             <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Orange Juice</Text>
@@ -38,7 +46,7 @@ export default function ScanScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#EFE7DE' },
-  cameraBackground: { position: 'absolute', width: '100%', height: '100%', resizeMode: 'cover', opacity: 0.9 },
+  cameraBackground: { position: 'absolute', width: '100%', height: '100%', resizeMode: 'cover', opacity: 1 }, // Chỉnh opacity thành 1 nếu bạn muốn ảnh rõ nét
   overlay: { flex: 1, justifyContent: 'space-between', padding: 20 },
   backBtn: { width: 45, height: 45, backgroundColor: '#fff', borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
   scanFrame: { alignSelf: 'center', width: 250, height: 250, position: 'relative', marginTop: 50 },

@@ -12,7 +12,7 @@ export default function SplashScreen({ navigation }) {
       >
         <View style={styles.imageContainer}>
           <Image 
-            source={{ uri: 'https://cdn3d.iconscout.com/3d/premium/thumb/online-shopping-4993685-4160415.png' }} 
+            source={require('../../assets/pc7.jpg')} 
             style={styles.image} 
           />
         </View>
@@ -35,8 +35,10 @@ export default function SplashScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FFF5F3' },
   content: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 30 },
-  imageContainer: { width: 300, height: 300, backgroundColor: '#FFEBE4', borderRadius: 150, alignItems: 'center', justifyContent: 'center', marginBottom: 40 },
-  image: { width: 200, height: 200, resizeMode: 'contain' },
+  // Giữ nguyên style vòng tròn
+  imageContainer: { width: 300, height: 300, backgroundColor: '#FFEBE4', borderRadius: 150, alignItems: 'center', justifyContent: 'center', marginBottom: 40, overflow: 'hidden' }, // Thêm overflow để bo tròn ảnh nếu lớn hơn
+  // Điều chỉnh style ảnh để lấp đầy vòng tròn và tự thu nhỏ
+  image: { width: '100%', height: '100%', resizeMode: 'contain' }, 
   title: { fontSize: 24, fontWeight: 'bold', color: '#333', marginBottom: 15 },
   subtitle: { fontSize: 14, color: '#888', textAlign: 'center', lineHeight: 22, marginBottom: 40 },
   dots: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center' },

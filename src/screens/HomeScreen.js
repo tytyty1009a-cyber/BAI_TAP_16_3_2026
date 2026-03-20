@@ -58,12 +58,21 @@ export default function HomeScreen({ navigation }) {
           <Ionicons name="arrow-forward" size={24} color="#333" />
         </View>
         
-        {/* Dummy Explore Images */}
-        <View style={{ flexDirection: 'row', gap: 15 }}>
-            <View style={{ width: 120, height: 120, backgroundColor: '#ddd', borderRadius: 15 }} />
-            <View style={{ width: 120, height: 120, backgroundColor: '#ccc', borderRadius: 15 }} />
-            <View style={{ width: 120, height: 120, backgroundColor: '#bbb', borderRadius: 15 }} />
-        </View>
+        {/* Explore Images (Đã cập nhật) */}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 15 }}>
+            <Image 
+              source={require('../../assets/pc4.jpg')} 
+              style={styles.exploreImage} 
+            />
+            <Image 
+              source={require('../../assets/pc5.jpg')} 
+              style={styles.exploreImage} 
+            />
+            <Image 
+              source={require('../../assets/pc6.jpg')} 
+              style={styles.exploreImage} 
+            />
+        </ScrollView>
       </ScrollView>
     </SafeAreaView>
   );
@@ -81,5 +90,12 @@ const styles = StyleSheet.create({
   iconBox: { width: 50, height: 50, borderRadius: 15, alignItems: 'center', justifyContent: 'center', marginBottom: 15 },
   cardTitle: { fontSize: 14, fontWeight: 'bold', color: '#333' },
   cardSub: { fontSize: 12, color: '#888', marginTop: 5 },
-  exploreHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 15 }
+  exploreHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 15 },
+  // Thêm style cho ảnh ở Explore More
+  exploreImage: {
+    width: 120, 
+    height: 120, 
+    borderRadius: 15,
+    resizeMode: 'cover',
+  }
 });

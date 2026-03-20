@@ -5,9 +5,30 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function CartScreen({ navigation }) {
   const items = [
-    { id: 1, brand: "Lauren's", name: "Orange Juice", price: "149", qty: 2, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=100&q=80" },
-    { id: 2, brand: "Baskin's", name: "Skimmed Milk", price: "129", qty: 2, img: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=100&q=80" },
-    { id: 3, brand: "Marley's", name: "Aloe Vera Lotion", price: "1249", qty: 3, img: "https://images.unsplash.com/photo-1608248593801-707577531773?auto=format&fit=crop&w=100&q=80" },
+    { 
+      id: 1, 
+      brand: "Lauren's", 
+      name: "Orange Juice", 
+      price: "149", 
+      qty: 2, 
+      img: require('../../assets/pc1.jpg') // Đã đổi sang ảnh local
+    },
+    { 
+      id: 2, 
+      brand: "Baskin's", 
+      name: "Skimmed Milk", 
+      price: "129", 
+      qty: 2, 
+      img: require('../../assets/pc2.jpg') // Đã đổi sang ảnh local
+    },
+    { 
+      id: 3, 
+      brand: "Marley's", 
+      name: "Aloe Vera Lotion", 
+      price: "1249", 
+      qty: 3, 
+      img: require('../../assets/pc3.jpg') // Đã đổi sang ảnh local
+    },
   ];
 
   return (
@@ -23,7 +44,9 @@ export default function CartScreen({ navigation }) {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 150 }}>
         {items.map(item => (
           <View key={item.id} style={styles.cartItem}>
-            <Image source={{ uri: item.img }} style={styles.itemImg} />
+            {/* Cập nhật lại thẻ Image: Bỏ { uri: ... } đi vì đây là ảnh local */}
+            <Image source={item.img} style={styles.itemImg} />
+            
             <View style={{ flex: 1, marginLeft: 15 }}>
               <Text style={styles.itemBrand}>{item.brand}</Text>
               <Text style={styles.itemName}>{item.name}</Text>
